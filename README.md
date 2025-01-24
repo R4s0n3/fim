@@ -16,7 +16,7 @@
    
    ```sh
    mv fim /usr/local/bin
-```
+
 
 ## **Usage**
 
@@ -24,7 +24,7 @@ To use the Favicon Maker, ensure that your binary is installed correctly and loc
 
 ```sh
    fim 'path/to/your/image_file.png'
-```
+
 
 You can also specify the size of the icon using the `--size` option. The available sizes are:
 * `sm` (64x64)
