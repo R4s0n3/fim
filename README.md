@@ -1,10 +1,10 @@
-# FIM - Fast Icon Maker
+# FIM - FavIcon Maker
 
 A cross-platform command-line utility to convert images to Windows/macOS/Linux `.ico` format with flexible sizing options.
 
 ## Version 1.1.0
 
-FIM (Fast Icon Maker) allows you to quickly convert your PNG, JPG, or other image formats to ICO files with customizable size options and aspect ratio handling.
+FIM (FavIcon Maker) allows you to quickly convert your PNG, JPG, or other image formats to ICO files with customizable size options and aspect ratio handling.
 
 ## Features
 
@@ -20,7 +20,7 @@ FIM (Fast Icon Maker) allows you to quickly convert your PNG, JPG, or other imag
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/fim.git
+git clone https://github.com/R4s0n3/fim.git
 cd fim
 
 # Build with cargo
