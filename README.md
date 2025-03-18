@@ -1,6 +1,6 @@
 # FIM - Fast Icon Maker
 
-A command-line utility to convert images to Windows/macOS `.ico` format with flexible sizing options.
+A cross-platform command-line utility to convert images to Windows/macOS/Linux `.ico` format with flexible sizing options.
 
 ## Version 1.1.0
 
@@ -12,6 +12,7 @@ FIM (Fast Icon Maker) allows you to quickly convert your PNG, JPG, or other imag
 - Multiple predefined size options (small, medium, large)
 - Preserve aspect ratio with transparent padding
 - Customizable resampling filters for optimal quality
+- Works on Windows, macOS, and Linux platforms
 
 ## Installation
 
@@ -26,7 +27,10 @@ cd fim
 cargo build --release
 
 # Optional: Move binary to your path
+# On macOS/Linux:
 cp target/release/fim /usr/local/bin/
+# On Windows:
+# copy target\release\fim.exe to a directory in your PATH
 ```
 
 ## Usage
@@ -93,6 +97,15 @@ fim image.png --filter gaussian
 - Added customizable resize filters with `-f/--filter` option
 - Improved image quality with transparent background for non-square images
 - Added detailed output information
+
+## Platform Support
+
+This tool works on:
+- Windows
+- macOS
+- Linux
+
+ICO files are primarily used for Windows applications, but this tool allows you to create them on any platform.
 
 ## License
 
