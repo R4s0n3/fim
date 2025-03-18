@@ -1,30 +1,107 @@
-# **FIM**
+# FIM - Fast Icon Maker
 
-`fim` is a simple CLI tool to convert images to `.ico` format, built with Rust. 
+A command-line utility to convert images to Windows/macOS `.ico` format with flexible sizing options.
 
-![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
+## Version 1.1.0
 
-## **Installation**
+FIM (Fast Icon Maker) allows you to quickly convert your PNG, JPG, or other image formats to ICO files with customizable size options and aspect ratio handling.
 
-### **Download the Binary**
+## Features
 
-1. Go to the [Releases](https://github.com/r4s0n3/fim/releases) page.
-2. Download the binary for your platform (e.g., `fim` for macOS).
-3. Move the binary to a directory in your PATH. For example:
-   
-   ```sh
-   mv fim /usr/local/bin
+- Convert various image formats to `.ico`
+- Multiple predefined size options (small, medium, large)
+- Preserve aspect ratio with transparent padding
+- Customizable resampling filters for optimal quality
 
-## **Features**
+## Installation
 
-- Convert `.png` or `.jpg` images to `.ico` format.
-- Supports multiple icon sizes: `sm` (64x64), `md` (128x128), and `lg` (256x256).
+### From Source
 
-## **Usage**
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/fim.git
+cd fim
 
-To use the Favicon Maker, ensure that your binary is installed correctly and located in a directory included in your PATH. Then, in your terminal, you can simply type:
+# Build with cargo
+cargo build --release
 
-   ```sh
-   fim path/to/your/image_file
+# Optional: Move binary to your path
+cp target/release/fim /usr/local/bin/
+```
+
+## Usage
+
+Basic usage:
+
+```bash
+fim input.png
+```
+
+This will convert `input.png` to `input.ico` using default settings (medium size 128x128).
+
+### Command Line Arguments
+
+```
+USAGE:
+    fim [OPTIONS] <input>
+
+ARGS:
+    <input>    Input image file (.png, .jpg)
+
+OPTIONS:
+    -s, --size <SIZE>      Icon size [possible values: sm, md, lg] [default: md]
+    -p, --preserve         Preserve aspect ratio
+    -f, --filter <FILTER>  Resize filter [possible values: nearest, triangle, catmullrom, gaussian, lanczos3] [default: lanczos3]
+    -h, --help             Print help information
+    -V, --version          Print version information
+```
+
+### Size Options
+
+- `sm`: Small (64x64 pixels)
+- `md`: Medium (128x128 pixels)
+- `lg`: Large (256x256 pixels)
+
+### Filter Options
+
+- `nearest`: Fastest, lowest quality
+- `triangle`: Fast with decent quality
+- `catmullrom`: Good quality with some sharpening
+- `gaussian`: Smooth results, may blur details
+- `lanczos3`: Highest quality (default)
+
+## Examples
+
+Convert to large icon:
+```bash
+fim image.png --size lg
+```
+
+Preserve aspect ratio:
+```bash
+fim image.png --size lg --preserve
+```
+
+Use different filter:
+```bash
+fim image.png --filter gaussian
+```
+
+## What's New in Version 1.1
+
+- Added aspect ratio preservation with `-p/--preserve` flag
+- Added customizable resize filters with `-f/--filter` option
+- Improved image quality with transparent background for non-square images
+- Added detailed output information
+
+## License
+
+[MIT License](LICENSE)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## TODO
+
+ - transform .svg to .ico ?
